@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-04-30T22:54:24-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Jekyll HW</title><link href="http://localhost:4000/2026/04/30/hw.html" rel="alternate" type="text/html" title="Jekyll HW" /><published>2026-04-30T00:00:00-05:00</published><updated>2026-04-30T00:00:00-05:00</updated><id>http://localhost:4000/2026/04/30/hw</id><content type="html" xml:base="http://localhost:4000/2026/04/30/hw.html"><![CDATA[<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<p><a href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/building_inventory.csv"><button>The Data</button></a>
+<a href="https://github.com/alsmonde/IS445/blob/main/jekyllhw.ipynb"><button>The Analysis</button></a></p>
+
+<h2 id="plot-1-average-building-size-by-usage-type">Plot 1: Average Building Size by Usage Type</h2>
+
+<p>The visualization shows the average building size by square footage by usage type. Each bar is encoded to a usage type while the length of the bar is encoded to the average square footage of the building (quantitative). I sorted the bars in descending order so we can easily tell which usage types are the largest to the smallest.</p>
+
+<p>The data transformation was dropping rows with 0 or lower values for square footage. I didn’t need to drop null values because the column didn’t have any. I then grouped the buildings by usage type and graphed it out with a simple bar chart. I didn’t need to use a color map, as this was a simple bar chart, which all measured the same thing, so there was nothing I needed to distinguish from each other.</p>
+
+<div id="plot1"></div>
+<script>
+  vegaEmbed('#plot1', '/assets/plot1.json')
+</script>
+
+<h2 id="plot-2-number-of-state-buildings-acquired-per-year">Plot 2: Number of State Buildings Acquired Per Year</h2>
+
+<p>This visualization shows plots out the number of buildings acquired by Illinois state vs the year. I encoded the year to the x-axis as an ordinal variable and I encoded the number of buildings acquired to the y-axis as a quantitative variable. Using a bar chart is ideal here, as it allows us to easily visualize the trends and standout years of building acquisition. I added an interactive element to hover each bar and know the eact number of buildings acquired and year as we have over a hundred years worth of bars, which makes it difficult to distinguish.</p>
+
+<p>One transformation I had to make to the data was to drop all the rows with a 0 in Year Acquired, as its likely a stand in for unknown. I want to ensure that my graph did not potentially take these rows into account. Otherwise, since the other variables I needed were accounted for I did no other transformations. As for the color scheme of the graph, I went for the default color, as there is no need to distinguish anything particular here.</p>
+
+<div id="plot2"></div>
+<script>
+  vegaEmbed('#plot2', '/assets/plot2.json')
+</script>]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry></feed>
